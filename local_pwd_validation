@@ -1,0 +1,12 @@
+#!/bin/sh
+
+LocalAcctName="<local_account_>"
+LocalAcctPWD="<local_password_to_check>"
+
+outputTest=$(dscl . authonly $LocalAcctName $LocalAcctPWD)
+
+if [ "$outputTest" = "" ]; then
+    echo "<result>Correct Password</result>"
+else
+    echo "<The password was changed</result>"
+fi
